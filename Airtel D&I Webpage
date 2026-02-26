@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airtel | Diversity & Inclusion Charter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root { --airtel-red: #ee1d23; --deep-slate: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background: var(--deep-slate); color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .red-gradient { background: linear-gradient(135deg, #ee1d23 0%, #b11217 100%); }
+        .progress-bar { height: 4px; background: #ee1d23; position: fixed; top: 0; left: 0; z-index: 100; transition: width 0.2s ease; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.airtel.in/assets/images/brand-pattern.png')] opacity-5 scale-150"></div>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">ALIVE. <span class="text-red-500 underline decoration-white">INCLUSIVE.</span> RESPECTFUL.</h1>
+        <p class="max-w-2xl text-xl text-gray-400">Achieving our vision of 50% women representation by 2026 through the "4 M's" of empowerment.</p>
+        <div class="mt-10 flex gap-4">
+            <button class="bg-red-600 px-8 py-4 rounded-full font-bold hover:scale-105 transition">The D&I Charter</button>
+            <button class="glass px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">Human Rights Policy</button>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center italic">Our D&I Strategy Framework</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-3xl hover:border-red-500 transition-all duration-500 group">
+                <div class="w-12 h-12 bg-red-600 rounded-lg mb-6 flex items-center justify-center font-bold">01</div>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-red-500">Cultivate</h3>
+                <p class="text-gray-400">Nurturing a culture where 100% of employees complete annual D&I certifications and ethics training.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl hover:border-red-500 transition-all duration-500 group">
+                <div class="w-12 h-12 bg-red-600 rounded-lg mb-6 flex items-center justify-center font-bold">02</div>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-red-500">Calibrate</h3>
+                <p class="text-gray-400">Targeting 50% sourcing of diversity profiles and implementing "Balanced Panels" for every senior hire.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl hover:border-red-500 transition-all duration-500 group">
+                <div class="w-12 h-12 bg-red-600 rounded-lg mb-6 flex items-center justify-center font-bold">03</div>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-red-500">Communicate</h3>
+                <p class="text-gray-400">Internal & external storytelling via #WELead and "Women Empowered" mentorship sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-black/50">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div><h4 class="text-5xl font-black text-red-500 mb-2">50%</h4><p class="text-sm text-gray-500 uppercase tracking-widest">Women Goal 2026</p></div>
+            <div><h4 class="text-5xl font-black text-red-500 mb-2">100+</h4><p class="text-sm text-gray-500 uppercase tracking-widest">Partner Institutions</p></div>
+            <div><h4 class="text-5xl font-black text-red-500 mb-2">60%</h4><p class="text-sm text-gray-500 uppercase tracking-widest">Campus Intake Female</p></div>
+            <div><h4 class="text-5xl font-black text-red-500 mb-2">40+</h4><p class="text-sm text-gray-500 uppercase tracking-widest">Remote Micro-Offices</p></div>
+        </div>
+    </section>
+
+    <script>
+        // Progress Bar Logic
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+
+        // Scroll Reveal Animations
+        gsap.from(".glass", {
+            scrollTrigger: ".glass",
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2
+        });
+    </script>
+</body>
+</html>
